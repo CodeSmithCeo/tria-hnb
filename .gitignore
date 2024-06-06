@@ -24,3 +24,6 @@ yarn-error.log*
 
 # visual studio Code local setup
 .vscode
+
+# ignore PDFs
+*.pdf
