@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 20em;
+    margin: 0;
+    color: #333;
+}
+
+h3 {
+    font-size: 3em;
+    margin: 1em 0;
+    color: #555;
+}
+
+p {
+    font-size: 2em;
+    margin: 2em 0;
+    color: #555;
+}

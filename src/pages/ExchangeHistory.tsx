@@ -1,0 +1,1 @@
+export default (): JSX.Element  => <div>HISTORY</div>
