@@ -17,3 +17,4 @@ const RouterContextProvider: React.FC<RouterContext> = ({ children, ...params })
 };
 
 export default RouterContextProvider;
+export {RouterContext}

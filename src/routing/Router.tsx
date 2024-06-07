@@ -32,13 +32,13 @@ const Router: Router = () => {
     if (!matchedRoute) matchedRoute = routes.find(route => route.path === '/404') as Route;
 
     const { path: routePath } = matchedRoute;
-    const routePathParts = routePath.split('/');
+    const routePathParts = routePath.split('/').filter(Boolean);
     const params: { [key: string]: string | null } = {};
 
     routePathParts.forEach((part, index) => {
         if (part.startsWith(':')) {
             const paramName = part.slice(1); // Remove the ':' prefix
-            params[paramName] = pathPartials[index] || null;
+            params[paramName] = pathPartials[index];
         }
     });
 
