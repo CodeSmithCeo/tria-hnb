@@ -3,14 +3,13 @@ import './App.css';
 import useUrlChange from 'hooks/useUrlChange';
 import Router from 'routing/Router';
 
-function App() {
+const App = () => {
 
   // use browser url
   const currentUrl = useUrlChange();
 
   return (
     <div className="App">
-      {currentUrl.path}
       <Router />
     </div>
   );

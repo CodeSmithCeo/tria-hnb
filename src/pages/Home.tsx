@@ -2,7 +2,8 @@ import React from 'react';
 import SplitLayout from 'layouts/SplitLayout';
 import StyledLink from 'components/StyledLink';
 
-function Home() {
+
+const Home = () => {
 
   return (
     <SplitLayout>

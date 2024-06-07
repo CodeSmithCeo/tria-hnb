@@ -1,13 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 
+const BASE_URL = 'https://api.hnb.hr/tecajn-eur/v3';
+
 type ApiState<T> = {
     data: T | null;
     error: string | null;
     loading: boolean;
 };
 
-const useApi = <T,>(url: string) => {
-    const [currentUrl, setCurrentUrl] = useState<string>(url);
+const useApi = <T,>() => {
+    const [url, setUrl] = useState<string | null>(null);
     const [state, setState] = useState<ApiState<T>>({
         data: null,
         error: null,
@@ -15,8 +17,9 @@ const useApi = <T,>(url: string) => {
     });
 
     useEffect(() => {
-      //NOTE: keep the effect callback NOT async to avoid nto triggering cleanup
-      const fetchData = async (url: string)=>{
+      if (!url) return; // Don't fetch if URL is not set
+
+      const fetchData = async (url: string) => {
         setState({ data: null, error: null, loading: true });
         try {
             const response = await fetch(url);
@@ -28,13 +31,16 @@ const useApi = <T,>(url: string) => {
         } catch (error: any) {
             setState({ data: null, error: error.message, loading: false });
         }
-      }
-       fetchData(url);
+      };
+
+      fetchData(url);
     }, [url]);
 
-    const updateUrl = (newUrl: string) => setCurrentUrl(newUrl);
+    const fetchApiData = (endpoint: string) => {
+        setUrl(BASE_URL + endpoint);
+    };
 
-    return { ...state, updateUrl };
+    return { ...state, fetchApiData };
 };
 
 export default useApi;
