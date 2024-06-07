@@ -1,0 +1,19 @@
+@import 'components/Table.css';
+
+.table__headers-search{
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  border: 1px solid #ddd
+}
+
+.table__header-search{
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 12px;
+}
+
+.table__header-search:focus{
+  border-color: #8dc1f8;
+}
