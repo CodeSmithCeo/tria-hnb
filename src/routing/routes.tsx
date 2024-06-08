@@ -2,7 +2,7 @@ import React from 'react';
 import Home from 'pages/Home';
 import AllExchanges from 'pages/all-exchanges/AllExchanges';
 import ExchangeHistory from 'pages/currency-history/CurrencyHistory';
-import Page404 from 'pages/Page404';
+import Page404 from 'pages/404/Page404';
 
 export type Route = {
     path: string;

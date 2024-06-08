@@ -1,11 +1,13 @@
-import DatePicker from "components/DatePicker";
+import DatePicker from "components/date-picker/DatePicker";
 import useApi from "hooks/useApi";
 import { useEffect, useState } from "react";
 import { epoChToYYYYMMDD } from "utils/dateUtils";
 import CurrencyTable from "./CurrenciesTable";
 import { CurrencyData } from "types/api/CurrencyData";
 
-const AllExchanges = () => {
+type Page = () => JSX.Element;
+
+const AllExchanges: Page = () => {
 
   const [selectedDate, setSelectedDate] = useState<number>(
     new Date().getTime()

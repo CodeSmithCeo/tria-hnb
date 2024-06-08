@@ -8,6 +8,7 @@ export type UrlData = {
 const useUrlChange = (): UrlData => {
     const [urlData, setUrlData] = useState<UrlData>({
         path: window.location.pathname,
+        // keep the result from having faulty values from '//'
         pathPartials: window.location.pathname.split('/').filter(Boolean),
     });
 

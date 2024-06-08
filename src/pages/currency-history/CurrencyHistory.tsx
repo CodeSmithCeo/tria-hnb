@@ -1,4 +1,4 @@
-import DatePicker from "components/DatePicker";
+import DatePicker from "components/date-picker/DatePicker";
 import useApi from "hooks/useApi";
 import { ChangeEvent, useContext, useEffect, useMemo, useState } from "react";
 import { epoChToYYYYMMDD, modifyDays } from "utils/dateUtils";
@@ -6,7 +6,9 @@ import { CurrencyData } from "types/api/CurrencyData";
 import {RouterContext} from "routing/RouterContext";
 import CurrencyHistoryTable from "pages/currency-history/CurrencyHistoryTable";
 
-const CurrencyHistory = () => {
+type Page = () => JSX.Element;
+
+const CurrencyHistory: Page = () => {
 
   const {currency, date} = useContext(RouterContext);
   

@@ -1,9 +1,10 @@
 import React from 'react';
-import SplitLayout from 'layouts/SplitLayout';
-import StyledLink from 'components/StyledLink';
+import SplitLayout from 'layouts/split-layout/SplitLayout';
+import StyledLink from 'components/link/StyledLink';
 
+type Page = () => JSX.Element;
 
-const Home = () => {
+const Home: Page = () => {
 
   return (
     <SplitLayout>

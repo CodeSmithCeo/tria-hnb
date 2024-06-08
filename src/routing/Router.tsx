@@ -4,9 +4,9 @@ import RouterContextProvider from 'routing/RouterContext';
 import type {Route} from 'routing/routes';
 import routes from 'routing/routes';
 
-type Router = () => JSX.Element;
+type Component = () => JSX.Element;
 
-const Router: Router = () => {
+const Router: Component = () => {
     const { pathPartials } = useUrlChange();
 
     const findMatchingRoute = (pathname: string): Route | undefined => {

@@ -1,5 +1,6 @@
 const ONE_DAY_IN_MS= 24 * 60 * 60 * 1000; // Number of seconds in one day
 
+// Converts epoch time to YYYY-MM-DD format string
 export const epoChToYYYYMMDD = (epoch: number): string => {
     const date = new Date(epoch);
     const year = date.getFullYear();
@@ -8,6 +9,7 @@ export const epoChToYYYYMMDD = (epoch: number): string => {
     return `${year}-${month}-${day}`;
 };
 
+// converts epoch time to Croatian native DD.MM.YYYY. format string
 export const epochToCroatian = (epoch: number): string => {
     const date = new Date(epoch); 
     const day = date.getDate().toString().padStart(2, '0'); 
@@ -16,6 +18,7 @@ export const epochToCroatian = (epoch: number): string => {
     return`${day}.${month}.${year}`;
 };
 
+// adds a number of days to an apoch format value, use -numberOfDays to subb
 export const modifyDays = (epoch: number, numberOfDays: number) => {
-    return epoch + ONE_DAY_IN_MS * numberOfDays; // Subtract one day
+    return epoch + ONE_DAY_IN_MS * numberOfDays;
 }

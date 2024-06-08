@@ -1,4 +1,4 @@
-import StyledLink from 'components/StyledLink';
+import StyledLink from 'components/link/StyledLink';
 import React, { ChangeEvent, useMemo, useState } from 'react';
 import { CurrencyData } from 'types/api/CurrencyData';
 import "./CurrenciesTable.css"
@@ -14,9 +14,9 @@ type SortConfig = {
 };
 
 
-type CurrencyTable = (Props: Props) => JSX.Element;
+type Component = (Props: Props) => JSX.Element;
 
-const CurrencyTable: CurrencyTable = (props) => {
+const CurrencyTable: Component = (props) => {
 
   const { data, date } = props;
   // State for filter values

@@ -6,9 +6,9 @@ type Props = {
   data: CurrencyData[];
 };
 
-type CurrencyTable = (Props: Props) => JSX.Element;
+type Component = (Props: Props) => JSX.Element;
 
-const CurrencyTable: CurrencyTable = (props) => {
+const CurrencyTable: Component = (props) => {
 
   const { data } = props;
 

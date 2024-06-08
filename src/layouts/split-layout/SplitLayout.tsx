@@ -2,11 +2,11 @@ import React from 'react';
 import { ReactNode } from 'react';
 import './SplitLayout.css';
 
-type SplitLayout = (
+type Layout = (
   {children}: {children: [ReactNode, ReactNode]}
 ) => JSX.Element;
 
-const SplitLayout: SplitLayout = ({children}) => {
+const SplitLayout: Layout = ({children}) => {
   
   const [leftChild, rightChild]= children;
   return (

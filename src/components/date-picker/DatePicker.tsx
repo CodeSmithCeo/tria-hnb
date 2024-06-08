@@ -7,10 +7,10 @@ type Props = {
     date: number;
     disabled?: boolean
 }
-type DatePicker = (props: Props) => JSX.Element;
+type Component = (props: Props) => JSX.Element;
 
 
-const DatePicker: DatePicker = (props) => {
+const DatePicker: Component = (props) => {
 
     const {
         onDateSelected,

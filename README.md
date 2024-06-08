@@ -11,7 +11,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**You will need to fix CORS issues with a locally hosted app**, there are ways around to reconfigure browser to not care or use plugin.
+**You will need to address CORS issues with a locally hosted app**, there are ways around to reconfigure browser to not care or use plugin.
 
 ### `yarn build`
 
