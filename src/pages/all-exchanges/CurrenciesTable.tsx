@@ -13,6 +13,8 @@ type SortConfig = {
   direction: 'asc' | 'desc';
 };
 
+type TableCurrencyData = Omit<CurrencyData, "broj_tecajnice"|"datum_primjene">
+
 
 type Component = (Props: Props) => JSX.Element;
 
@@ -55,16 +57,18 @@ const CurrencyTable: Component = (props) => {
       currency[key].toLowerCase().includes(filters[key].toLowerCase())
     )
   );
-  }, [data, filters]);
+  }, [filters, relevantData]);
 
 
   const sortedData = useMemo(() => {
-        if (!sortConfig) return filteredData;
+    if (!sortConfig) return filteredData;
 
-    return [...filteredData].sort((a, b) => {
+    return [...filteredData].sort((a: TableCurrencyData, b: TableCurrencyData) => {
       const { key, direction } = sortConfig;
 
+      // @ts-ignore
       const aValue = a[key];
+      // @ts-ignore
       const bValue = b[key];
 
       const aNum = Number.parseFloat(aValue);
@@ -93,6 +97,7 @@ const CurrencyTable: Component = (props) => {
       <thead>
         <tr>
           {headers.map(header => (
+            // @ts-ignore
             <th className="table__headers" key={header} onClick={() => handleSortChange(header)}>
               {header} {sortConfig?.key === header && (sortConfig.direction === 'asc' ? '▲' : '▼')}
             </th>

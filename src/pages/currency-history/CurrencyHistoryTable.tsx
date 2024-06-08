@@ -18,6 +18,7 @@ const CurrencyTable: Component = (props) => {
   const cssColoring = (propName:string, index: number, array: CurrencyData[]): string => {
     if (index === array.length-1) return "--same";
 
+    // @ts-ignore
     const stringsToCompare = [array[index][propName], array[index+1][propName]];
     const parsableToCompare = stringsToCompare.map( str => str.replace(",", ".") );
     const numbersToCompare = parsableToCompare.map( str => Number.parseFloat(str) );

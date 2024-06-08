@@ -18,7 +18,7 @@ export const epochToCroatian = (epoch: number): string => {
     return`${day}.${month}.${year}`;
 };
 
-// adds a number of days to an apoch format value, use -numberOfDays to subb
+// adds a number of days to an epoch format value, use -numberOfDays to subb
 export const modifyDays = (epoch: number, numberOfDays: number) => {
     return epoch + ONE_DAY_IN_MS * numberOfDays;
 }
