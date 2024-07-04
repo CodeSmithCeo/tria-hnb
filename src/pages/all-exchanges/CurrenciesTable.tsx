@@ -71,8 +71,10 @@ const CurrencyTable: Component = (props) => {
       // @ts-ignore
       const bValue = b[key];
 
-      const aNum = Number.parseFloat(aValue);
-      const bNum = Number.parseFloat(bValue);
+
+      const aNum = Number.parseFloat(aValue.replace(',','.'));
+      const bNum = Number.parseFloat(bValue.replace(',','.'));
+      console.log(aNum, bNum, aValue)
       const isNumeric = !isNaN(aNum) && !isNaN(bNum);
 
       if (isNumeric) {
