@@ -41,7 +41,7 @@ const CurrencyTable: Component = (props) => {
   };
 
    const handleSortChange = (key: keyof CurrencyData) => {
-    if (sortConfig === null) setSortConfig({ key, direction: 'asc' });
+    if (key !== sortConfig?.key) setSortConfig({ key, direction: 'asc' });
     else if ( sortConfig.direction === 'asc') setSortConfig({ key, direction: 'desc' });
     else setSortConfig({ key, direction: 'asc' });
   };
